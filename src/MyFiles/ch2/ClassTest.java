@@ -23,7 +23,8 @@ class DrumKitTestDrive {
 
         drumKits[0] = d;
         drumKits[1] = e;
-        drumKits[2] = d;
+        drumKits[2] = new DrumKit();
+        drumKits[2].snare = true;
 
         d.snare = false;
         if (d.snare == true) {
