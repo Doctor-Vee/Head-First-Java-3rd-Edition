@@ -8,17 +8,19 @@ public class Startup {
     private int numOfHits = 0;
 
     String checkYourself (int guess){
-        if(Arrays.stream(locationCells).anyMatch(value -> value == guess)){
-            numOfHits += 1;
-            if(numOfHits == locationCells.length){
-                return "kill";
-            } else {
-                return "hit";
+        for(int i = 0; i < locationCells.length; i++){
+            if(locationCells[i] == guess){
+                numOfHits += 1;
+                if(numOfHits == locationCells.length){
+                    return "kill";
+                } else {
+                    return "hit";
+                }
             }
-        } else {
-            return "miss";
         }
-    }
+        return "miss";
+        }
+
 
     void setLocationCells(int [] loc){
 //        for (int i = 0; i < loc.length; i++){
