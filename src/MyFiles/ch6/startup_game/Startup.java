@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Startup {
-
-//    private ArrayList<Character> locationCells;
-        private List<String> locationCells = new ArrayList<>();
+    private String name;
+    private List<String> locationCells = new ArrayList<>();
     private int numOfHits = 0;
+
+    public Startup(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return name;
+    }
 
     String checkYourself(String guess) {
 //        int index = locationCells.indexOf(guess);
