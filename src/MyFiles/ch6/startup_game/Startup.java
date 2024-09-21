@@ -5,14 +5,17 @@ import java.util.List;
 
 public class Startup {
 
-    private List<Integer> locationCells = new ArrayList<>();
+//    private ArrayList<Character> locationCells;
+        private List<String> locationCells = new ArrayList<>();
     private int numOfHits = 0;
 
-    String checkYourself(int guess) {
-        int index = locationCells.indexOf(guess);
-        System.out.println(index);
-        if (index >= 0) {
-            locationCells.remove(index);
+    String checkYourself(String guess) {
+//        int index = locationCells.indexOf(guess);
+//        System.out.println(index);
+//        if (index >= 0) {
+
+        if (locationCells.contains(guess)) {
+            locationCells.remove(guess);
             numOfHits += 1;
             if (locationCells.isEmpty()) {
                 return "kill";
@@ -25,7 +28,7 @@ public class Startup {
     }
 
 
-    void setLocationCells(List<Integer> locationCells) {
+    void setLocationCells(ArrayList<String> locationCells) {
 //        for (int i = 0; i < loc.length; i++){
 //            locationCells[i] = loc[i];
 //        };
