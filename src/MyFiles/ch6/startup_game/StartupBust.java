@@ -1,60 +1,78 @@
 package MyFiles.ch6.startup_game;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class StartupBust {
     GameHelper helper = new GameHelper();
-    Startup[] startups = new Startup[3];
-    int numOfGuesses = 0;
+    private ArrayList<Startup> startups = new ArrayList<>();
+    private int numOfGuesses = 0;
 
     void setUpGame() {
-        startups[0] = new Startup("Poniez");
-        startups[1] = new Startup("Cabista");
-        startups[2] = new Startup("Hacqi");
+        Startup poniez = new Startup("Poniez");
+        Startup cabista = new Startup("Cabista");
+        Startup hacqi = new Startup("Hacqi");
 
-        helper.setStartupLocationCells(startups[0]);
-        helper.setStartupLocationCells(startups[1]);
-        helper.setStartupLocationCells(startups[2]);
+        startups.addAll(Arrays.asList(poniez, cabista, hacqi));
 
-        System.out.println("This is a game where you can shoot down startups by guessing their locations... Are you ready?? 🥳");
+        System.out.println("This is a game where you can sink startups by guessing their locations... \n" +
+                "You are expected to sink 3 startups (poniez, cabista and hacqi)... Are you ready?? 🥳");
+
+        for (Startup startup : startups) {
+            helper.placeStartup(startup);
+        }
     }
 
     void startPlaying() {
-        int liveStartups = 3;
-
-        do {
+        while (!startups.isEmpty()) {
             String guess = helper.takeUserGuess("Enter a cell from A0 to G6: ");
-            numOfGuesses++;
-
-
-            String [] results = checkUserGuess(guess);
-
-            if (results[0].equals("kill") || results[1].equals("kill") || results[2].equals("kill")) {
-                System.out.println("kill");
-                liveStartups--;
-            } else if (results[0].equals("hit") || results[1].equals("hit") || results[2].equals("hit")) {
-                System.out.println("hit");
-            } else {
-                System.out.println("miss");
-            }
-        } while (liveStartups != 0);
+            checkUserGuess(guess);
+        }
+        finishGame();
     }
 
-    private String[] checkUserGuess(String guess) {
-        String result0 = startups[0].checkYourself(guess);
-        String result1 = startups[1].checkYourself(guess);
-        String result2 = startups[2].checkYourself(guess);
-        return new String[]{result0, result1, result2};
+    private void checkUserGuess(String guess) {
+        numOfGuesses++;
+        String result = "miss";
+
+//        for(int i = 0; i < startups.size(); i++){
+//            result = startups.get(i).checkYourself(guess);
+//            System.out.println(result);
+//            if(result.equals("kill")){
+//                System.out.println("You sank " + startups.get(i).getName());
+//                startups.remove(i); //TODO: Decide whether to follow them or to leave it like this
+//            }
+//        }
+
+        for (Startup startup: startups){
+            result = startup.checkYourself(guess);
+
+            if(result.equals("hit")){
+                break;
+            }
+            if(result.equals("kill")) {
+                startups.remove(startup);
+                break;
+            }
+        }
+        System.out.println(result);
     }
 
     void finishGame() {
-        System.out.println("You used " + numOfGuesses + " guesses");
-    }
+        System.out.println("The Game is over 🎉You used " + numOfGuesses + " guesses");
 
+        if(numOfGuesses < 17){
+            System.out.println("You did an excellent job! ✅ ");
+        } else {
+            System.out.println("Gerrarahere mehn ... Go and learn biko 😏");
+        }
+    }
 
     public static void main(String[] args) {
         StartupBust game = new StartupBust();
         game.setUpGame();
         game.startPlaying();
-        game.finishGame();
 
     }
 }

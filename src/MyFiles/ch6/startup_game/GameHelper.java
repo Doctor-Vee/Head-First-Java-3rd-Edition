@@ -12,7 +12,7 @@ public class GameHelper {
         return scanner.next();
     }
 
-    public void setStartupLocationCells(Startup startup){
+    public void placeStartup(Startup startup){
         char headLetter = (char) ((int) (Math.random() * 5) + 65);
         int headNumber = (int) (Math.random() * 5);
         ArrayList<String> cells = new ArrayList<>();

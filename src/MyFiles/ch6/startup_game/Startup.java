@@ -6,7 +6,6 @@ import java.util.List;
 public class Startup {
     private String name;
     private List<String> locationCells = new ArrayList<>();
-    private int numOfHits = 0;
 
     public Startup(String name){
         this.name = name;
@@ -19,25 +18,22 @@ public class Startup {
 //        int index = locationCells.indexOf(guess);
 //        System.out.println(index);
 //        if (index >= 0) {
-
+        String result = "miss";
         if (locationCells.contains(guess)) {
             locationCells.remove(guess);
-            numOfHits += 1;
             if (locationCells.isEmpty()) {
-                return "kill";
+                result = "kill";
+                System.out.println("Ouch! You sunk " + name);
             } else {
-                return "hit";
+                result = "hit";
             }
         }
 
-        return "miss";
+        return result;
     }
 
 
     void setLocationCells(ArrayList<String> locationCells) {
-//        for (int i = 0; i < loc.length; i++){
-//            locationCells[i] = loc[i];
-//        };
         this.locationCells = locationCells;
     }
 }
