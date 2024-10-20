@@ -1,11 +1,11 @@
 package MyFiles.ch7;
 
-public class Animal {
+public abstract class Animal {
     private String picture = "Animal picture";
     private int hunger;
     boolean isDangerous = false;
 
-    void sayHello(){
+    public void sayHello(){
         System.out.println("I am here to do animal stuff");
         System.out.println(picture);
     }
@@ -16,5 +16,9 @@ public class Animal {
 
     public boolean isDangerous() {
         return isDangerous;
+    }
+
+    public static int giveHeight(){
+        return 45;
     }
 }

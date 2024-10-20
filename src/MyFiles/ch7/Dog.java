@@ -1,11 +1,11 @@
 package MyFiles.ch7;
 
-public class Dog extends Animal{
+public class Dog extends Canine{
 
     private int tailLength;
 //    private boolean isDangerous = true;
 
-    void sayHello(){
+    public void sayHello(){
         super.isDangerous = true;
 //        super.sayHello();
         System.out.println("I am a dog");
