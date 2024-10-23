@@ -2,6 +2,10 @@ package MyFiles.ch8;
 
 public class Hippo extends Animal{
 
+    public Hippo(String name) {
+        super(name);
+    }
+
     public void eat() {
         System.out.println("Hippo is eating");
     }

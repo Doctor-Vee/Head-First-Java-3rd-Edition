@@ -1,6 +1,11 @@
 package MyFiles.ch8;
 
 public abstract class Animal {
+    String name;
+
+    public Animal(String name){
+        this.name = name;
+    }
 
     public abstract void eat();
 
@@ -10,6 +15,11 @@ public abstract class Animal {
 
     public static void greet(){
         System.out.println("Hello");
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 
     public abstract void move();
