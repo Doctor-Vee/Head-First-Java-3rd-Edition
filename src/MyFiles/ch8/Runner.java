@@ -31,11 +31,12 @@ public class Runner {
 
         Object object = new Object();
         System.out.println(object);
-
         Object dog = new Dog("Dog");
         System.out.println(dog.hashCode());
         System.out.println("hello world");
-        dog = nkita;
+        if(object instanceof Dog){
+            ((Dog) dog).eat();
+        }
         System.out.println(dog.hashCode());
         System.out.println(nkita.hashCode());
         dog = getSameDog(aja);
