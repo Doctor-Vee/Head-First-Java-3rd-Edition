@@ -6,6 +6,7 @@ public class Runner {
     public static void main(String[] args) {
         Animal.greet();
         Animal hippo = new Hippo("Hippopotamus");
+        System.out.println(hippo.name + " actions====================");
         hippo.eat();
         hippo.fly();
 
@@ -43,6 +44,8 @@ public class Runner {
         System.out.println(dog.hashCode());
         System.out.println(aja.hashCode());
 
+        House house = new House();
+        house.designEverywhere();
 
     }
 

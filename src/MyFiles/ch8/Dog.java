@@ -17,6 +17,7 @@ public class Dog extends Canine{
     }
 
     public void setName(String name) {
+        eat();
         this.name = name;
     }
 
