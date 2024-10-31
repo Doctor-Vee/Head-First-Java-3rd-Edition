@@ -1,11 +1,17 @@
 package MyFiles.ch9;
 
 public class Duck {
-    private int size;
+    protected int size;
 
-    public Duck(){
+    private Duck(){
         System.out.println("Creating the duck and setting the size by default to 50");
         size = 50;
+    }
+
+    public Duck(boolean defaultConstructor){
+       this();
+        System.out.println("Increasing the size by 10 in the Duck class");
+       this.size += 10;
     }
 
     public Duck(int size){

@@ -47,6 +47,23 @@ public class Runner {
         House house = new House();
         house.designEverywhere();
 
+
+        Animal animal = new Animal("Animalia") {
+            @Override
+            public void eat() {
+                System.out.println("Animal created from abstract class implementation is eating");
+            }
+
+            public void move() {
+                System.out.println("Movement is not a bad idea here");
+            }
+
+        };
+
+        animal.eat();
+        animal.fly();
+        animal.move();
+
     }
 
     public static Animal getSameDog(Dog o) {
