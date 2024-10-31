@@ -8,7 +8,9 @@ public class Piglet extends Pig{
 
     public Piglet(int height){
 //        super(height);
-        super();
+//        super();
+        this();
+//        super();
         System.out.println("Creating the piglet with a given height");
     }
 

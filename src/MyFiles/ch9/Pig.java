@@ -4,6 +4,7 @@ public class Pig {
     private int height;
 
     public Pig(){
+        this(35);
         System.out.println("Creating a new pig and setting the height to a default value of 10");
         this.height += 10;
     }
@@ -14,6 +15,11 @@ public class Pig {
     }
 
     public int getHeight() {
+        calculateHeight();
         return height += 10;
+    }
+
+    public void calculateHeight(){
+        System.out.println("Calculating the height");
     }
 }

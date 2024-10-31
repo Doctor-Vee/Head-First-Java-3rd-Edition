@@ -16,8 +16,12 @@ public class Runner {
         Duckling duckling = new Duckling();
         System.out.println(duckling.getSize());
 
-        Piglet piglet = new Piglet(44);
+        Piglet piglet = new Piglet(34);
         System.out.println("The height is " + piglet.getHeight());
+
+        piglet = null; // This makes the piglet that was created above to be disconnected from the reference which was
+        // just set to null thereby making the object on the heap to be eligible for GC
+//        System.out.println(piglet.getHeight());
 
     }
 }
