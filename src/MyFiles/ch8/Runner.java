@@ -1,5 +1,9 @@
 package MyFiles.ch8;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Runner {
 
     //    ArrayList
@@ -30,12 +34,17 @@ public class Runner {
 
         System.out.println(animalList);
 
+        MyAnimalList<Animal> hippos = new MyAnimalList<>();
+        hippos.add(hippo);
+        hippos.add(aja);
+        System.out.println(hippos);
+
         Object object = new Object();
         System.out.println(object);
         Object dog = new Dog("Dog");
         System.out.println(dog.hashCode());
         System.out.println("hello world");
-        if(object instanceof Dog){
+        if (object instanceof Dog) {
             ((Dog) dog).eat();
         }
         System.out.println(dog.hashCode());
@@ -63,10 +72,23 @@ public class Runner {
         animal.eat();
         animal.fly();
         animal.move();
+        ArrayList<Animal> animals = new ArrayList<>();
+        animals.add(animal);
+        animals.add(hippo);
+        animals.add(nkita);
+        animals.add(aja);
+        animals.add(nkruma);
+        System.out.println("Printing from the static method (testAnimalList)");
+        testAnimalList(animals);
 
     }
 
     public static Animal getSameDog(Dog o) {
         return o;
+    }
+
+
+    static void testAnimalList(ArrayList<Animal> animals) {
+        System.out.println(animals);
     }
 }

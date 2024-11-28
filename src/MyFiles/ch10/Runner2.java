@@ -3,6 +3,7 @@ package MyFiles.ch10;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Formatter;
+import java.util.List;
 
 public class Runner2 {
     public static void main(String[] args) {
@@ -30,7 +31,14 @@ public class Runner2 {
 
         System.out.printf("%nHere's a hexadecimal value conversion => %x", 65);
 
-        System.out.printf("%nHere's a character conversion => %c", 67);
+        System.out.printf("%nHere's a character conversion => %c%n", 67);
+
+        Duck duck = new Duck("newDuck");
+        duck.getDuckNamesWithConstructor();
+
+
 
     }
+
+
 }

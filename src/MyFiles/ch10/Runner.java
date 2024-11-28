@@ -18,6 +18,7 @@ public class Runner {
         Duck duck3 = new Duck("Duckling");
         System.out.println(Duck.duckCount);
         System.out.println(Duck.duckNames);
+        duck3.getDuckNamesWithConstructor();
 
         // Singleton
         CaptainSingleton captainSingleton = CaptainSingleton.getInstance();

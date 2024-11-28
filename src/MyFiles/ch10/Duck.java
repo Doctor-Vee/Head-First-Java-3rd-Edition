@@ -20,4 +20,8 @@ public class Duck {
     public void printNames(){
         System.out.println(duckNames);
     }
+
+    public void getDuckNamesWithConstructor(){
+        new Duck("mangoDuck").printNames();
+    }
 }

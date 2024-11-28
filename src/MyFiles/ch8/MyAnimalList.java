@@ -32,8 +32,8 @@ public class MyAnimalList<E> {
 
     @Override
     public String toString() {
-        return "MyDogList{" +
-                "dogList=" + Arrays.toString(Arrays.stream(animalList).filter(Objects::nonNull).toArray()) +
+        return "MyAnimalList{" +
+                "animalList=" + Arrays.toString(Arrays.stream(animalList).filter(Objects::nonNull).toArray()) +
                 ", index=" + index +
                 '}';
     }
